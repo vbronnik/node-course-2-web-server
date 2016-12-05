@@ -2,6 +2,10 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// stores environment vars
+// with default to 3000
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 // Adding support for partials for code re-use
@@ -99,6 +103,10 @@ app.get('/bad', (req, res) => {
 
 // listens for things on port 3000
 // express provides auto content type
-app.listen(3000, () => {
-  console.log('Server is up on port 3000.');
+// app.listen(3000, () => {
+//   console.log('Server is up on port 3000.');
+// });
+
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}.`);
 });
