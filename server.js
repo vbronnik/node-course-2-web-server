@@ -94,6 +94,13 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  // using handlebars instead for dynamic template pages
+  res.render('projects.hbs', {
+    pageTitle: 'Projects page',
+  });
+});
+
 // send back errorMessage
 app.get('/bad', (req, res) => {
   res.send({
